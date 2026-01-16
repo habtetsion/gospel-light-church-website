@@ -25,7 +25,7 @@ export default function Header() {
           {/* Logo and Church Name */}
           <Link to="/" className="flex items-center space-x-3" onClick={closeMenu}>
             <img
-              src="/images/logo/church-logo.svg"
+              src={`${import.meta.env.BASE_URL}images/logo/church-logo.svg`}
               alt="Gospel Light Church Logo"
               className="w-12 h-12"
             />

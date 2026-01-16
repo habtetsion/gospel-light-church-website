@@ -25,14 +25,14 @@ export default function About() {
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-              {/* Image/Placeholder */}
+              {/* Church Building Image */}
               <div className="order-2 md:order-1">
-                <div className="aspect-[4/3] bg-gradient-to-br from-primary-200 to-primary-400 rounded-2xl shadow-xl flex items-center justify-center">
-                  <div className="text-center text-white p-8">
-                    <p className="text-6xl mb-4">⛪</p>
-                    <p className="text-2xl font-heading font-semibold">Church Photo</p>
-                    <p className="text-sm opacity-90 mt-2">Add your church building photo here</p>
-                  </div>
+                <div className="aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/gallery/church-building.webp`}
+                    alt="Gospel Light Eritrean Baptist Church Building"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 

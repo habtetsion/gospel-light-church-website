@@ -8,11 +8,14 @@ export default function WelcomeSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="order-2 md:order-1">
-            <div className="aspect-[4/3] bg-gradient-to-br from-primary-200 to-primary-400 rounded-2xl shadow-xl flex items-center justify-center">
-              <div className="text-center text-white p-8">
-                <p className="text-6xl mb-4">📖</p>
-                <p className="text-2xl font-heading font-semibold">Pastor's Photo</p>
-                <p className="text-sm opacity-90 mt-2">Coming Soon</p>
+            <div className="rounded-2xl shadow-xl overflow-hidden">
+              <img
+                src={`${import.meta.env.BASE_URL}images/leadership/hq720.jpg`}
+                alt="Pastor Biniam Asefaw"
+                className="w-full h-full object-cover"
+              />
+              <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white p-4 text-center">
+                <p className="text-xl font-heading font-semibold">Pastor Biniam Asefaw</p>
               </div>
             </div>
           </div>

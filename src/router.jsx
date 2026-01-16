@@ -45,4 +45,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  basename: '/gospel-light-church-website',
+});

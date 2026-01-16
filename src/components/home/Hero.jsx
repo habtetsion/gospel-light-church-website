@@ -3,8 +3,14 @@ import Button from '../common/Button';
 export default function Hero() {
   return (
     <div className="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/hero/hero-worship.webp)` }}
+      ></div>
+
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-black opacity-30"></div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
       {/* Content */}
       <div className="relative container-custom py-24 md:py-32 lg:py-40">

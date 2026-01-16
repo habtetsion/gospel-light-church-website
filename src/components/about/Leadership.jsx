@@ -5,30 +5,37 @@ import { HiMail } from 'react-icons/hi';
 export default function Leadership() {
   const leaders = [
     {
-      name: 'Pastor Name',
+      name: 'Pastor Biniam Asefaw',
       role: 'Senior Pastor',
-      bio: 'Pastor [Name] has been leading Gospel Light Eritrean Baptist Church since [year]. He is passionate about teaching God\'s Word and shepherding the congregation.',
-      email: 'pastor@example.com',
-      image: null, // Add image path when available
+      bio: 'Pastor Biniam Asefaw leads Gospel Light Eritrean Baptist Church with passion for teaching God\'s Word and shepherding the congregation with love and dedication.',
+      email: null,
+      image: `${import.meta.env.BASE_URL}images/leadership/hq720.jpg`,
     },
     {
-      name: 'Elder Name',
+      name: 'Ghirmay Araya',
       role: 'Elder',
-      bio: 'Serving as an elder, [Name] provides spiritual guidance and oversight for our church family.',
+      bio: 'Serving as an elder, Ghirmay provides spiritual guidance and oversight for our church family, helping to lead with wisdom and compassion.',
       email: null,
       image: null,
     },
     {
-      name: 'Deacon Name',
-      role: 'Deacon',
-      bio: '[Name] serves as a deacon, coordinating practical ministry and care for our congregation.',
+      name: 'Yohannes Okbai',
+      role: 'Elder',
+      bio: 'Elder Yohannes serves our church by providing spiritual leadership and support to the congregation in their walk with Christ.',
       email: null,
       image: null,
     },
     {
-      name: 'Worship Leader Name',
-      role: 'Worship Leader',
-      bio: '[Name] leads our worship team, helping the congregation engage in heartfelt praise and worship.',
+      name: 'Finan Tesfalidet',
+      role: 'Elder',
+      bio: 'Elder Finan helps shepherd our church family, offering guidance and care to those in need of spiritual support.',
+      email: null,
+      image: null,
+    },
+    {
+      name: 'Tesfazgi Kahsu',
+      role: 'Elder',
+      bio: 'Elder Tesfazgi serves with dedication, providing spiritual oversight and encouragement to our growing congregation.',
       email: null,
       image: null,
     },
@@ -46,7 +53,7 @@ export default function Leadership() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {leaders.map((leader, index) => (
             <Card key={index} className="text-center">
               {/* Photo Placeholder */}
