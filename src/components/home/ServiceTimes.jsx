@@ -66,8 +66,8 @@ export default function ServiceTimes() {
         </div>
 
         <div className="text-center">
-          <Button to="/services" variant="primary" size="lg">
-            Get Directions & More Info
+          <Button to="/contact" variant="primary" size="lg">
+            Contact Us
           </Button>
         </div>
       </Container>

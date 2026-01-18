@@ -29,8 +29,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-primary-400 transition-colors">
-                  Service Times
+                <Link to="/ministries" className="hover:text-primary-400 transition-colors">
+                  Ministries
                 </Link>
               </li>
               <li>

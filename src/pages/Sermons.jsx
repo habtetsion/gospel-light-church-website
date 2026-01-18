@@ -1,9 +1,13 @@
 import Container from '../components/common/Container';
 import SermonList from '../components/sermons/SermonList';
+import LiveSermon from '../components/sermons/LiveSermon';
 import { sermons } from '../data/sermons';
 import { FaYoutube } from 'react-icons/fa';
 
 export default function Sermons() {
+  // Set this to true when you're live streaming, false otherwise
+  const isLiveNow = false;
+
   return (
     <div className="bg-neutral-50">
       {/* Page Header */}
@@ -21,6 +25,9 @@ export default function Sermons() {
           </div>
         </Container>
       </div>
+
+      {/* Live Sermon Section - Shows when live streaming */}
+      {isLiveNow && <LiveSermon />}
 
       {/* Sermons Section */}
       <section className="section-padding">

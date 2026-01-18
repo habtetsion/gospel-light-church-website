@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import Home from './pages/Home';
 import About from './pages/About';
-import Services from './pages/Services';
+import Ministries from './pages/Ministries';
 import Events from './pages/Events';
 import Sermons from './pages/Sermons';
 import Contact from './pages/Contact';
@@ -24,8 +24,8 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: 'services',
-        element: <Services />,
+        path: 'ministries',
+        element: <Ministries />,
       },
       {
         path: 'events',

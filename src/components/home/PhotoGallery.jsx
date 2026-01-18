@@ -16,7 +16,7 @@ export default function PhotoGallery() {
     },
     {
       id: 3,
-      src: `${import.meta.env.BASE_URL}images/leadership/hq720.jpg`,
+      src: `${import.meta.env.BASE_URL}images/leadership/pastor-biniam-asefaw.jpg`,
       alt: 'Pastor Biniam Asefaw',
       title: 'Our Pastor'
     },

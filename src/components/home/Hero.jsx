@@ -22,7 +22,7 @@ export default function Hero() {
             A community of faith, hope, and love. Join us as we worship together and grow in Christ.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button to="/services" variant="accent" size="lg">
+            <Button to="/contact" variant="accent" size="lg">
               Plan Your Visit
             </Button>
             <Button to="/sermons" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary-600">

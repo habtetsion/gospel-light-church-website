@@ -9,7 +9,7 @@ export default function Leadership() {
       role: 'Senior Pastor',
       bio: 'Pastor Biniam Asefaw leads Gospel Light Eritrean Baptist Church with passion for teaching God\'s Word and shepherding the congregation with love and dedication.',
       email: null,
-      image: `${import.meta.env.BASE_URL}images/leadership/hq720.jpg`,
+      image: `${import.meta.env.BASE_URL}images/leadership/pastor-biniam-asefaw.jpg`,
     },
     {
       name: 'Ghirmay Araya',

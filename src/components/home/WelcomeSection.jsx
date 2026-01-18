@@ -10,7 +10,7 @@ export default function WelcomeSection() {
           <div className="order-2 md:order-1">
             <div className="rounded-2xl shadow-xl overflow-hidden">
               <img
-                src={`${import.meta.env.BASE_URL}images/leadership/hq720.jpg`}
+                src={`${import.meta.env.BASE_URL}images/leadership/pastor-biniam-asefaw.jpg`}
                 alt="Pastor Biniam Asefaw"
                 className="w-full h-full object-cover"
               />
