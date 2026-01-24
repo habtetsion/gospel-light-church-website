@@ -4,6 +4,19 @@
 
 export const sermons = [
   {
+    id: 4,
+    title: "Latest Sermon",
+    speaker: "Pastor Biniam Asefaw",
+    date: "2026-01-18",
+    series: "",
+    scripture: "",
+    description: "Sunday worship service message.",
+    videoId: "7Et77-iB0jY",
+    thumbnail: "https://img.youtube.com/vi/7Et77-iB0jY/maxresdefault.jpg",
+    duration: "",
+    category: "Sunday Service",
+  },
+  {
     id: 1,
     title: "ዝተባረኸ ሂወት",
     speaker: "Pastor Biniam Asefaw",
