@@ -67,8 +67,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <HiMail className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <a href="mailto:gospellight@gmail.com" className="hover:text-primary-400 transition-colors">
-                  gospellight@gmail.com
+                <a href="mailto:Berhanwongeldallas@gmail.com" className="hover:text-primary-400 transition-colors">
+                  Berhanwongeldallas@gmail.com
                 </a>
               </li>
             </ul>

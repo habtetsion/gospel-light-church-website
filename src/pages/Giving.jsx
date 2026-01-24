@@ -8,7 +8,7 @@ export default function Giving() {
     {
       name: 'Zelle',
       description: 'Send your gift instantly using Zelle to our church email.',
-      email: 'gospellight@gmail.com',
+      email: 'Berhanwongeldallas@gmail.com',
       icon: SiZelle,
       color: 'from-purple-400 to-purple-600',
     },

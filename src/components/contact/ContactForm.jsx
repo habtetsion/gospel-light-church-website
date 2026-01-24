@@ -37,7 +37,7 @@ export default function ContactForm() {
           phone: data.phone || 'Not provided',
           subject: data.subject,
           message: data.message,
-          to_email: 'gospellight@gmail.com',
+          to_email: 'Berhanwongeldallas@gmail.com',
         },
         publicKey
       );
@@ -68,7 +68,7 @@ export default function ContactForm() {
       {submitStatus === 'error' && (
         <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
           <p className="font-semibold">Failed to send message</p>
-          <p className="text-sm">Please try again or contact us directly at gospellight@gmail.com</p>
+          <p className="text-sm">Please try again or contact us directly at Berhanwongeldallas@gmail.com</p>
         </div>
       )}
 
