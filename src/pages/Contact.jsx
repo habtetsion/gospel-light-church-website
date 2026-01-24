@@ -1,6 +1,7 @@
 import Container from '../components/common/Container';
 import ContactForm from '../components/contact/ContactForm';
 import ContactInfo from '../components/contact/ContactInfo';
+import Map from '../components/contact/Map';
 
 export default function Contact() {
   return (
@@ -37,21 +38,9 @@ export default function Contact() {
         </Container>
       </section>
 
-      {/* Map Section (Optional - can add later) */}
+      {/* Map Section */}
       <section className="pb-0">
-        <div className="h-96 bg-neutral-200 flex items-center justify-center">
-          <div className="text-center">
-            <p className="text-neutral-600 mb-4">Interactive Map Coming Soon</p>
-            <a
-              href="https://maps.google.com/?q=11110+Garland+Rd+Dallas+TX+75218"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-block"
-            >
-              View on Google Maps
-            </a>
-          </div>
-        </div>
+        <Map />
       </section>
     </div>
   );
