@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/hero/hero-worship.webp)` }}
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/hero/IMG_9905.JPG)` }}
       ></div>
 
       {/* Background overlay */}
