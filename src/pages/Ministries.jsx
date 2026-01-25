@@ -17,8 +17,8 @@ export default function Ministries() {
       color: 'from-blue-400 to-blue-600',
     },
     {
-      name: '220 @ gospel light',
-      description: 'For youth and young adults of English speakers.',
+      name: '220 @ Gospel Light',
+      description: 'Empowering youth and young adults English speakers to know Christ, grow in faith, and make a difference in their community.',
       icon: HiUsers,
       color: 'from-green-400 to-green-600',
     },

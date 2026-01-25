@@ -12,7 +12,7 @@ L.Icon.Default.mergeOptions({
 
 export default function Map() {
   // Church location: 11110 Garland Rd, Dallas, TX 75218
-  const position = [32.8381, -96.7073];
+  const position = [32.8465488, -96.6850057];
 
   return (
     <MapContainer

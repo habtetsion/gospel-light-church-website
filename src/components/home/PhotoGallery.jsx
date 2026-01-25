@@ -18,7 +18,7 @@ export default function PhotoGallery() {
 
   // New Year 2026 Photos
   const newYearPhotos = [
-    '_82A0002.JPG', '_82A0003.JPG', 'IMG_0155.JPG', 'IMG_0156.JPG', 'IMG_0157.JPG',
+    'IMG_0155.JPG', 'IMG_0156.JPG', 'IMG_0157.JPG',
     'IMG_0158.JPG', 'IMG_0159.JPG', 'IMG_0160.JPG', 'IMG_0161.JPG', 'IMG_0162.JPG',
     'IMG_0163.JPG', 'IMG_0164.JPG', 'IMG_0165.JPG', 'IMG_0166.JPG', 'IMG_0167.JPG',
     'IMG_0168.JPG', 'IMG_0169.JPG', 'IMG_0170.JPG', 'IMG_0171.JPG', 'IMG_0172.JPG',
