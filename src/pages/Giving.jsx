@@ -176,7 +176,7 @@ export default function Giving() {
                         <p className="text-sm text-neutral-600 mb-1">Mail to:</p>
                         <p className="font-semibold text-neutral-900">{method.address}</p>
                         <p className="text-sm text-neutral-600 mt-2">
-                          Make checks payable to: Gospel Light Eritrean Baptist Church
+                          Make checks payable to: Gospel Light Eritrean Baptist Church Dallas
                         </p>
                       </div>
                     )}
