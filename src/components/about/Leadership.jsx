@@ -16,7 +16,7 @@ export default function Leadership() {
       role: 'Elder',
       bio: 'Serving as an elder, Ghirmay provides spiritual guidance and oversight for our church family, helping to lead with wisdom and compassion.',
       email: null,
-      image: null,
+      image: `${import.meta.env.BASE_URL}images/leadership/girmay-araya.jpg`,
     },
     {
       name: 'Yohannes Okbai',
@@ -59,11 +59,13 @@ export default function Leadership() {
               {/* Photo Placeholder */}
               <div className="mb-4">
                 {leader.image ? (
-                  <img
-                    src={leader.image}
-                    alt={leader.name}
-                    className="w-32 h-32 rounded-full mx-auto object-cover"
-                  />
+                  <div className="w-40 h-40 rounded-full mx-auto bg-neutral-100 flex items-center justify-center overflow-hidden">
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      className="w-full h-full object-contain scale-110"
+                    />
+                  </div>
                 ) : (
                   <div className="w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
                     <span className="text-white text-3xl font-bold">
