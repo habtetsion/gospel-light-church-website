@@ -3,17 +3,18 @@ import { formatEventDate } from '../../data/events';
 import Card from '../common/Card';
 
 export default function EventCard({ event }) {
-  // Format date for display
-  const eventDate = new Date(event.date);
+  // Format date for display (parse as local date to avoid timezone issues)
+  const [year, month, day] = event.date.split('-').map(Number);
+  const eventDate = new Date(year, month - 1, day);
   const monthShort = eventDate.toLocaleDateString('en-US', { month: 'short' });
-  const day = eventDate.getDate();
+  const dayNumber = eventDate.getDate();
 
   return (
     <Card className="overflow-hidden p-0 flex flex-col h-full">
       <div className="flex">
         {/* Date Badge */}
         <div className="bg-primary-500 text-white p-6 flex flex-col items-center justify-center min-w-[100px]">
-          <div className="text-3xl font-bold">{day}</div>
+          <div className="text-3xl font-bold">{dayNumber}</div>
           <div className="text-sm uppercase tracking-wide">{monthShort}</div>
         </div>
 

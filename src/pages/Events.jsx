@@ -81,7 +81,8 @@ export default function Events() {
                     </h3>
                     <div className="space-y-4">
                       {getUpcomingEvents(5).map((event) => {
-                        const eventDate = new Date(event.date);
+                        const [year, month, dayNum] = event.date.split('-').map(Number);
+                        const eventDate = new Date(year, month - 1, dayNum);
                         const monthShort = eventDate.toLocaleDateString('en-US', { month: 'short' });
                         const day = eventDate.getDate();
 

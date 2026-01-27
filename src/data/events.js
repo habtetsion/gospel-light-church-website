@@ -91,9 +91,15 @@ export const events = [
   },
 ];
 
+// Helper function to parse date string as local date (avoiding timezone issues)
+const parseLocalDate = (dateString) => {
+  const [year, month, day] = dateString.split('-').map(Number);
+  return new Date(year, month - 1, day);
+};
+
 // Helper function to format event date
 export const formatEventDate = (dateString) => {
-  const date = new Date(dateString);
+  const date = parseLocalDate(dateString);
   return date.toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
@@ -104,7 +110,7 @@ export const formatEventDate = (dateString) => {
 
 // Helper function to format short date
 export const formatShortDate = (dateString) => {
-  const date = new Date(dateString);
+  const date = parseLocalDate(dateString);
   return date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
@@ -122,8 +128,8 @@ export const getUpcomingEvents = (limit = null) => {
   today.setHours(0, 0, 0, 0);
 
   const upcoming = events
-    .filter((event) => new Date(event.date) >= today)
-    .sort((a, b) => new Date(a.date) - new Date(b.date));
+    .filter((event) => parseLocalDate(event.date) >= today)
+    .sort((a, b) => parseLocalDate(a.date) - parseLocalDate(b.date));
 
   return limit ? upcoming.slice(0, limit) : upcoming;
 };

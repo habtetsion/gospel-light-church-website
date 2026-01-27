@@ -23,7 +23,7 @@ export default function Leadership() {
       role: 'Elder',
       bio: 'Elder Yohannes serves our church by providing spiritual leadership and support to the congregation in their walk with Christ.',
       email: null,
-      image: null,
+      image: `${import.meta.env.BASE_URL}images/leadership/john-okbai.jpg`,
     },
     {
       name: 'Finan Tesfalidet',
