@@ -29,6 +29,7 @@ export default function SermonCard({ sermon }) {
             <img
               src={sermon.thumbnail}
               alt={sermon.title}
+              loading="lazy"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all flex items-center justify-center">

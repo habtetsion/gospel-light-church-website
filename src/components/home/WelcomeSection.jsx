@@ -12,6 +12,7 @@ export default function WelcomeSection() {
               <img
                 src={`${import.meta.env.BASE_URL}images/leadership/pastor-biniam-asefaw.jpg`}
                 alt="Pastor Biniam Asefaw"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white p-4 text-center">

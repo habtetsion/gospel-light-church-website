@@ -20,6 +20,7 @@ export default function About() {
                   <img
                     src={`${import.meta.env.BASE_URL}images/gallery/church-building.webp`}
                     alt="Gospel Light Eritrean Baptist Church Building"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
