@@ -37,7 +37,7 @@ export default function Leadership() {
       role: 'Elder',
       bio: 'Elder Tesfazgi serves with dedication, providing spiritual oversight and encouragement to our growing congregation.',
       email: null,
-      image: null,
+      image: `${import.meta.env.BASE_URL}images/leadership/tesfazgi- kahsu.jpg`,
     },
   ];
 

@@ -42,10 +42,10 @@ export default function ContactInfo() {
           <div>
             <h3 className="font-semibold text-neutral-900 mb-1">Phone</h3>
             <a
-              href="tel:+12143275700"
+              href="tel:+17029798235"
               className="text-neutral-600 hover:text-primary-600 transition-colors"
             >
-              (214) 327-5700
+              (702) 979-8235
             </a>
           </div>
         </div>
