@@ -1,12 +1,42 @@
+import { useState, useEffect } from 'react';
 import Container from '../components/common/Container';
 import SermonList from '../components/sermons/SermonList';
 import LiveSermon from '../components/sermons/LiveSermon';
-import { sermons } from '../data/sermons';
+import { sermons as fallbackSermons } from '../data/sermons';
+import { fetchLatestSermons } from '../services/youtube';
 import { FaYoutube } from 'react-icons/fa';
 
 export default function Sermons() {
   // Set this to true when you're live streaming, false otherwise
   const isLiveNow = false;
+
+  // State for sermons data
+  const [sermons, setSermons] = useState(fallbackSermons);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch sermons from YouTube on component mount
+  useEffect(() => {
+    async function loadSermons() {
+      try {
+        setLoading(true);
+        const youtubeSermons = await fetchLatestSermons();
+
+        // If we got sermons from YouTube, use them; otherwise use fallback
+        if (youtubeSermons && youtubeSermons.length > 0) {
+          setSermons(youtubeSermons);
+        }
+      } catch (err) {
+        console.error('Failed to load YouTube sermons:', err);
+        setError(err.message);
+        // Keep using fallback sermons on error
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadSermons();
+  }, []);
 
   return (
     <div className="bg-neutral-50">
@@ -65,12 +95,33 @@ export default function Sermons() {
               Recent Sermons
             </h2>
             <p className="text-neutral-600 mt-2">
-              {sermons.length} {sermons.length === 1 ? 'sermon' : 'sermons'} available
+              {loading ? (
+                'Loading latest sermons...'
+              ) : (
+                <>
+                  {sermons.length} {sermons.length === 1 ? 'sermon' : 'sermons'} available
+                  {error && (
+                    <span className="text-amber-600 text-sm ml-2">
+                      (Showing cached sermons)
+                    </span>
+                  )}
+                </>
+              )}
             </p>
           </div>
 
-          {/* Sermon List with Filters */}
-          <SermonList sermons={sermons} />
+          {/* Loading State */}
+          {loading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+                <p className="text-neutral-600">Loading sermons from YouTube...</p>
+              </div>
+            </div>
+          ) : (
+            /* Sermon List with Filters */
+            <SermonList sermons={sermons} />
+          )}
 
           {/* Load More / View All */}
           <div className="mt-12 text-center">
