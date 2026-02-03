@@ -6,8 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gospel Light Eritrean Baptist Church - Dallas, TX</title>
     <meta name="description" content="Gospel Light Eritrean Baptist Church in Dallas, TX. Join us for worship, fellowship, and spiritual growth." />
-    <script type="module" crossorigin src="/gospel-light-church-website/assets/index-C5QjEMeZ.js"></script>
-    <link rel="stylesheet" crossorigin href="/gospel-light-church-website/assets/index-Dc3ZV37k.css">
+
+    <!-- Security Headers via Meta Tags -->
+    <!-- Content Security Policy: Allows necessary external resources while preventing XSS -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://*.youtube.com https://s.ytimg.com https://*.ytimg.com https://api.emailjs.com https://cdn.jsdelivr.net https://www.gstatic.com;
+      style-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net;
+      img-src 'self' data: https: http:;
+      font-src 'self' data:;
+      connect-src 'self' https://api.emailjs.com https://api.rss2json.com https://www.youtube.com https://*.youtube.com https://*.googlevideo.com https://*.tile.openstreetmap.org;
+      frame-src 'self' https://www.youtube.com https://*.youtube.com https://www.youtube-nocookie.com;
+      media-src 'self' https://www.youtube.com https://*.youtube.com https://*.googlevideo.com blob:;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      upgrade-insecure-requests;
+    " />
+
+    <!-- Prevent clickjacking attacks -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+
+    <!-- Prevent MIME type sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- Control referrer information -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Permissions Policy: Restrict browser features -->
+    <meta http-equiv="Permissions-Policy" content="
+      geolocation=(),
+      microphone=(),
+      camera=(),
+      payment=(),
+      usb=(),
+      magnetometer=(),
+      gyroscope=(),
+      accelerometer=()
+    " />
+    <script type="module" crossorigin src="/gospel-light-church-website/assets/index-CdIXbpyQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/gospel-light-church-website/assets/index-De4F7KxY.css">
   </head>
   <body>
     <div id="root"></div>
