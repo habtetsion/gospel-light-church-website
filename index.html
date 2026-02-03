@@ -11,12 +11,13 @@
     <!-- Content Security Policy: Allows necessary external resources while preventing XSS -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://s.ytimg.com https://api.emailjs.com https://cdn.jsdelivr.net;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://*.youtube.com https://s.ytimg.com https://*.ytimg.com https://api.emailjs.com https://cdn.jsdelivr.net https://www.gstatic.com;
       style-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net;
       img-src 'self' data: https: http:;
       font-src 'self' data:;
-      connect-src 'self' https://api.emailjs.com https://api.rss2json.com https://www.youtube.com https://*.tile.openstreetmap.org;
-      frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;
+      connect-src 'self' https://api.emailjs.com https://api.rss2json.com https://www.youtube.com https://*.youtube.com https://*.googlevideo.com https://*.tile.openstreetmap.org;
+      frame-src 'self' https://www.youtube.com https://*.youtube.com https://www.youtube-nocookie.com;
+      media-src 'self' https://www.youtube.com https://*.youtube.com https://*.googlevideo.com blob:;
       object-src 'none';
       base-uri 'self';
       form-action 'self';

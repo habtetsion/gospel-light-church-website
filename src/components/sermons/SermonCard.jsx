@@ -6,6 +6,7 @@ import Card from '../common/Card';
 
 export default function SermonCard({ sermon }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const youtubeUrl = `https://www.youtube.com/watch?v=${sermon.videoId}`;
 
   return (
     <Card className="overflow-hidden p-0">
@@ -13,19 +14,28 @@ export default function SermonCard({ sermon }) {
       <div className="relative aspect-video bg-neutral-900">
         {isPlaying ? (
           <ReactPlayer
-            url={`https://www.youtube.com/watch?v=${sermon.videoId}`}
+            url={youtubeUrl}
             width="100%"
             height="100%"
             controls
             playing
             config={{
               youtube: {
-                playerVars: { modestbranding: 1 }
+                playerVars: {
+                  modestbranding: 1,
+                  rel: 0,
+                  fs: 1
+                }
               }
             }}
           />
         ) : (
-          <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlaying(true)}>
+          <a
+            href={youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative w-full h-full group cursor-pointer block"
+          >
             <img
               src={sermon.thumbnail}
               alt={sermon.title}
@@ -42,7 +52,7 @@ export default function SermonCard({ sermon }) {
                 {sermon.duration}
               </div>
             )}
-          </div>
+          </a>
         )}
       </div>
 
@@ -98,10 +108,19 @@ export default function SermonCard({ sermon }) {
           </div>
         )}
 
-        {/* Watch on YouTube Link */}
-        <div className="mt-4">
+        {/* Action Buttons */}
+        <div className="mt-4 flex items-center gap-3">
+          {!isPlaying && (
+            <button
+              onClick={() => setIsPlaying(true)}
+              className="text-primary-600 hover:text-primary-700 text-sm font-medium flex items-center gap-1"
+            >
+              <HiPlay className="w-4 h-4" />
+              Play Here
+            </button>
+          )}
           <a
-            href={`https://www.youtube.com/watch?v=${sermon.videoId}`}
+            href={youtubeUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-600 hover:text-primary-700 text-sm font-medium"

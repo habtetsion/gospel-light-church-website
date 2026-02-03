@@ -68,19 +68,41 @@ export async function fetchLatestSermons() {
  */
 function detectCategory(title, publishDate) {
   const titleLower = title.toLowerCase();
+
+  // Enhanced keyword detection for Prayer Meeting (Friday services)
+  const prayerKeywords = [
+    'prayer', 'ጸሎት', 'friday', 'ዓርቢ',
+    'prayer meeting', 'prayer night', 'የጸሎት',
+    'ምሸት ጸሎት', 'evening prayer', 'ኣምልኾ'
+  ];
+
+  // Check title for prayer meeting keywords
+  if (prayerKeywords.some(keyword => titleLower.includes(keyword))) {
+    return 'Prayer Meeting';
+  }
+
+  // Sunday service keywords
+  const sundayKeywords = [
+    'sunday', 'ሰንበት', 'sunday service',
+    'worship service', 'ምስጋና', 'አምልኮ'
+  ];
+
+  // Check title for Sunday service keywords
+  if (sundayKeywords.some(keyword => titleLower.includes(keyword))) {
+    return 'Sunday Service';
+  }
+
+  // Fallback: Check publish day of week
+  // Note: This checks when video was uploaded, not when service occurred
   const dayOfWeek = publishDate.getDay(); // 0 = Sunday, 5 = Friday
 
-  // Check title for keywords
-  if (titleLower.includes('prayer') || titleLower.includes('ጸሎት')) {
+  // Videos uploaded on Thursday/Friday likely Friday prayer meetings
+  if (dayOfWeek === 4 || dayOfWeek === 5) {
     return 'Prayer Meeting';
   }
 
-  // Check day of week (Friday = Prayer Meeting, Sunday = Sunday Service)
-  if (dayOfWeek === 5) {
-    return 'Prayer Meeting';
-  }
-
-  if (dayOfWeek === 0) {
+  // Videos uploaded on Saturday/Sunday likely Sunday services
+  if (dayOfWeek === 6 || dayOfWeek === 0) {
     return 'Sunday Service';
   }
 
