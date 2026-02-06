@@ -30,7 +30,7 @@ export default function Leadership() {
       role: 'Elder',
       bio: 'Elder Finan helps shepherd our church family, offering guidance and care to those in need of spiritual support.',
       email: null,
-      image: null,
+      image: `${import.meta.env.BASE_URL}images/leadership/finan.jpg`,
     },
     {
       name: 'Tesfazgi Kahsu',
