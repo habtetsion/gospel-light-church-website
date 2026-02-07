@@ -30,11 +30,9 @@ export default function SermonCard({ sermon }) {
             }}
           />
         ) : (
-          <a
-            href={youtubeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative w-full h-full group cursor-pointer block"
+          <div
+            onClick={() => setIsPlaying(true)}
+            className="relative w-full h-full group cursor-pointer"
           >
             <img
               src={sermon.thumbnail}
@@ -52,7 +50,7 @@ export default function SermonCard({ sermon }) {
                 {sermon.duration}
               </div>
             )}
-          </a>
+          </div>
         )}
       </div>
 
@@ -112,7 +110,11 @@ export default function SermonCard({ sermon }) {
         <div className="mt-4 flex items-center gap-3">
           {!isPlaying && (
             <button
-              onClick={() => setIsPlaying(true)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsPlaying(true);
+              }}
               className="text-primary-600 hover:text-primary-700 text-sm font-medium flex items-center gap-1"
             >
               <HiPlay className="w-4 h-4" />
@@ -124,6 +126,7 @@ export default function SermonCard({ sermon }) {
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-600 hover:text-primary-700 text-sm font-medium"
+            onClick={(e) => e.stopPropagation()}
           >
             Watch on YouTube →
           </a>
