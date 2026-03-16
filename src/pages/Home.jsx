@@ -5,6 +5,7 @@ import UpcomingEvents from "../components/home/UpcomingEvents";
 import PhotoGallery from "../components/home/PhotoGallery";
 import LiveSermon from "../components/sermons/LiveSermon";
 import AnnouncementBanner from "../components/home/AnnouncementBanner";
+import FeaturedEvent from "../components/home/FeaturedEvent";
 
 export default function Home() {
   // Set this to true when you're live streaming, false otherwise
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <>
+      <FeaturedEvent />
       <Hero />
       {/* Show live sermon at top of home page when streaming */}
       {isLiveNow && <LiveSermon />}

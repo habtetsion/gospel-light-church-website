@@ -26,7 +26,7 @@ export default function Leadership() {
       image: `${import.meta.env.BASE_URL}images/leadership/john-okbai.jpg`,
     },
     {
-      name: 'Finan Tesfalidet',
+      name: 'Finan Tesfaldet',
       role: 'Elder',
       bio: 'Elder Finan helps shepherd our church family, offering guidance and care to those in need of spiritual support.',
       email: null,

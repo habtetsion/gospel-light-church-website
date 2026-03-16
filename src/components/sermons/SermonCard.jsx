@@ -1,58 +1,31 @@
-import { useState } from 'react';
-import ReactPlayer from 'react-player';
-import { HiPlay, HiCalendar, HiUser, HiBookOpen } from 'react-icons/hi';
+import { HiCalendar, HiUser, HiBookOpen } from 'react-icons/hi';
 import { formatSermonDate } from '../../data/sermons';
 import Card from '../common/Card';
 
 export default function SermonCard({ sermon }) {
-  const [isPlaying, setIsPlaying] = useState(false);
   const youtubeUrl = `https://www.youtube.com/watch?v=${sermon.videoId}`;
 
   return (
     <Card className="overflow-hidden p-0">
-      {/* Video Player */}
-      <div className="relative aspect-video bg-neutral-900">
-        {isPlaying ? (
-          <ReactPlayer
-            url={youtubeUrl}
-            width="100%"
-            height="100%"
-            controls
-            playing
-            config={{
-              youtube: {
-                playerVars: {
-                  modestbranding: 1,
-                  rel: 0,
-                  fs: 1
-                }
-              }
-            }}
-          />
-        ) : (
-          <div
-            onClick={() => setIsPlaying(true)}
-            className="relative w-full h-full group cursor-pointer"
-          >
-            <img
-              src={sermon.thumbnail}
-              alt={sermon.title}
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all flex items-center justify-center">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                <HiPlay className="w-8 h-8 text-primary-600 ml-1" />
-              </div>
-            </div>
-            {sermon.duration && (
-              <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
-                {sermon.duration}
-              </div>
-            )}
+      {/* Video Thumbnail */}
+      <a
+        href={youtubeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative aspect-video bg-neutral-900 block"
+      >
+        <img
+          src={sermon.thumbnail}
+          alt={sermon.title}
+          loading="lazy"
+          className="w-full h-full object-cover"
+        />
+        {sermon.duration && (
+          <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded">
+            {sermon.duration}
           </div>
         )}
-      </div>
+      </a>
 
       {/* Sermon Info */}
       <div className="p-6">
@@ -106,26 +79,13 @@ export default function SermonCard({ sermon }) {
           </div>
         )}
 
-        {/* Action Buttons */}
-        <div className="mt-4 flex items-center gap-3">
-          {!isPlaying && (
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setIsPlaying(true);
-              }}
-              className="text-primary-600 hover:text-primary-700 text-sm font-medium flex items-center gap-1"
-            >
-              <HiPlay className="w-4 h-4" />
-              Play Here
-            </button>
-          )}
+        {/* Action Button */}
+        <div className="mt-4">
           <a
             href={youtubeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary-600 hover:text-primary-700 text-sm font-medium"
+            className="text-primary-600 hover:text-primary-700 text-sm font-medium inline-flex items-center gap-1"
             onClick={(e) => e.stopPropagation()}
           >
             Watch on YouTube →

@@ -4,53 +4,57 @@
 export const announcements = [
   {
     id: 1,
-    type: 'special',
-    message: 'Join us for our special Easter celebration service on April 20th at 10:00 AM!',
-    startDate: '2026-04-01',
-    endDate: '2026-04-20',
-    linkText: 'View Details',
-    linkTo: '/events',
+    type: "special",
+    message:
+      "Join us for our special Easter celebration service on April 20th at 10:00 AM!",
+    startDate: "2026-04-01",
+    endDate: "2026-04-20",
+    linkText: "View Details",
+    linkTo: "/events",
     linkHref: null,
-    priority: 1
+    priority: 1,
   },
   {
     id: 2,
-    type: 'info',
-    message: 'New Bible study classes starting next month. Registration now open for all age groups.',
-    startDate: '2026-01-25',
-    endDate: '2026-01-31',
-    linkText: 'Learn More',
-    linkTo: '/contact',
+    type: "info",
+    message:
+      "New Bible study classes starting next month. Registration now open for all age groups.",
+    startDate: "2026-01-25",
+    endDate: "2026-01-31",
+    linkText: "Learn More",
+    linkTo: "/contact",
     linkHref: null,
-    priority: 2
+    priority: 2,
   },
   {
     id: 3,
-    type: 'warning',
-    message: 'Please note: Sunday service time has been moved to 11:00 AM this week only.',
-    startDate: '2026-02-01',
-    endDate: '2026-02-07',
+    type: "warning",
+    message:
+      "Please note: Sunday service time has been moved to 11:00 AM this week only.",
+    startDate: "2026-02-01",
+    endDate: "2026-02-07",
     linkText: null,
     linkTo: null,
     linkHref: null,
-    priority: 5
+    priority: 5,
   },
   {
     id: 4,
-    type: 'emergency',
-    message: 'Service cancelled today due to weather conditions. Join us for online worship instead.',
-    startDate: '2026-03-15',
-    endDate: '2026-03-15',
-    linkText: 'Watch Online',
-    linkTo: '/sermons',
+    type: "emergency",
+    message:
+      "Service cancelled today due to weather conditions. Join us for online worship instead.",
+    startDate: "2026-02-15",
+    endDate: "2026-02-15",
+    linkText: "Watch Online",
+    linkTo: "/sermons",
     linkHref: null,
-    priority: 10
-  }
+    priority: 10,
+  },
 ];
 
 // Helper function to parse date string as local date (avoiding timezone issues)
 const parseLocalDate = (dateString) => {
-  const [year, month, day] = dateString.split('-').map(Number);
+  const [year, month, day] = dateString.split("-").map(Number);
   return new Date(year, month - 1, day);
 };
 
